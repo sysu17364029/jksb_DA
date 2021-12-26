@@ -421,6 +421,7 @@ def shuobo(data_file, shuobo_file):
     for i in range(3,wb_rows2+1):
         if wb_sheet2.cell(row=i, column=4).value == '本科生':
             del2.append(i)
+    del2.sort(reverse=True)
     for num in del2:
         wb_sheet2.delete_rows(int(num))       
     for i in range(3,wb_sheet2.max_row):  # 前两行无用
