@@ -385,12 +385,12 @@ def benke(data_file, benke_file):
     del2 = []
 
     for i in range(3,wb_rows2+1):
-        if wb_sheet2.cell(row=i, column=4).value == '博士' or wb_sheet1.cell(row=i, column=4).value == '硕士':
+        if wb_sheet2.cell(row=i, column=4).value == '博士' or wb_sheet2.cell(row=i, column=4).value == '硕士':
             del2.append(i)
     del2.sort(reverse=True) 
     for num in del2:
         wb_sheet2.delete_rows(int(num))       
-    for i in range(3,wb_sheet2.max_row):  # 前两行无用
+    for i in range(3,wb_sheet2.max_row+1):  # 前两行无用
         wb_sheet2.cell(row=i,column=1).value = i-2  # 重新编号
     
     wb.remove(wb.worksheets[3])
@@ -426,7 +426,7 @@ def shuobo(data_file, shuobo_file):
     del2.sort(reverse=True)
     for num in del2:
         wb_sheet2.delete_rows(int(num))       
-    for i in range(3,wb_sheet2.max_row):  # 前两行无用
+    for i in range(3,wb_sheet2.max_row+1):  # 前两行无用
         wb_sheet2.cell(row=i,column=1).value = i-2  # 重新编号
     
     wb.remove(wb.worksheets[2])
