@@ -387,6 +387,7 @@ def benke(data_file, benke_file):
     for i in range(3,wb_rows2+1):
         if wb_sheet2.cell(row=i, column=4).value == '博士' or wb_sheet1.cell(row=i, column=4).value == '硕士':
             del2.append(i)
+    del2.sort(reverse=True) 
     for num in del2:
         wb_sheet2.delete_rows(int(num))       
     for i in range(3,wb_sheet2.max_row):  # 前两行无用
