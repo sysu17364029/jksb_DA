@@ -9,16 +9,17 @@ import numpy as np
 
 """
 第一天要改的就是这些文件路径和名字
-之后就只需要改today、if_12、new_name、benke_name、shuobo_namea
+之后就只需要改today、if_12、ttime
 """
-today = '12.26'
+today = '12.26' # 今天的日期
+ttime = '9' # 导出的时间
 if_12 = 0   # 是否是12点的数据
 
 # 文件名
-new_name = r'D:\C 兼辅\D 健康申报\今日未填报清单1226-9.xlsx' # 最终生成的文件名
+new_name = r'D:\C 兼辅\D 健康申报\今日未填报清单'+today.replace('.','')+'-'+ttime+'.xlsx' # 最终生成的文件名
 
-benke_name = r'D:\C 兼辅\D 健康申报\本科-今日&连续3日未填报清单1226.xlsx'
-shuobo_name = r'D:\C 兼辅\D 健康申报\硕博-今日&连续3日未填报清单1226.xlsx'
+benke_name = r'D:\C 兼辅\D 健康申报\本科-今日&连续3日未填报清单'+today.replace('.','')+'.xlsx'
+shuobo_name = r'D:\C 兼辅\D 健康申报\硕博-今日&连续3日未填报清单'+today.replace('.','')+'.xlsx'
 
 refer_path = r'D:\C 兼辅\D 健康申报' + '\\'  # 用于匹配的文件路径
 refer_name = r'全院学生信息.xlsx'   # 用于匹配的文件名
